@@ -1,3 +1,4 @@
+import currency from "currency.js";
 import { useState } from "react";
 import { Text, TextInput, View } from "react-native";
 
@@ -34,7 +35,10 @@ export default function FirstStep() {
         }}
       />
       {amount && (
-        <Text>You will receive USD {amount} tokens in your wallet.</Text>
+        <Text>
+          You will receive USD {currency(amount || 0, { symbol: "" }).format()}{" "}
+          tokens in your wallet.
+        </Text>
       )}
     </View>
   );
