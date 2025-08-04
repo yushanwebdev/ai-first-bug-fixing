@@ -12,15 +12,6 @@ const formatAmount = (value: string): string => {
 export default function FirstStep() {
   const [amount, setAmount] = useState("");
 
-  // Format the amount to display with 2 decimal places
-  const formatAmount = (value: string): string => {
-    const numericValue = parseFloat(value);
-    if (isNaN(numericValue)) {
-      return value; // Return original value if not a valid number
-    }
-    return numericValue.toFixed(2);
-  };
-
   return (
     <View
       style={{
