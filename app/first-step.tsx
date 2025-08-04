@@ -3,6 +3,13 @@ import { Text, TextInput, View } from "react-native";
 
 export default function FirstStep() {
   const [amount, setAmount] = useState("");
+
+  // Helper function to format amount with 2 decimal places
+  const formatAmount = (value: string): string => {
+    const numericValue = parseFloat(value);
+    if (isNaN(numericValue)) return "0.00";
+    return numericValue.toFixed(2);
+  };
   return (
     <View
       style={{
@@ -34,7 +41,9 @@ export default function FirstStep() {
         }}
       />
       {amount && (
-        <Text>You will receive USD {amount} tokens in your wallet.</Text>
+        <Text>
+          You will receive USD {formatAmount(amount)} tokens in your wallet.
+        </Text>
       )}
     </View>
   );
