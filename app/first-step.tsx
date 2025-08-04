@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { Text, TextInput, View } from "react-native";
 
+const formatAmount = (value: string): string => {
+  const numericValue = parseFloat(value);
+  if (isNaN(numericValue)) {
+    return value; // Return original value if not a valid number
+  }
+  return numericValue.toFixed(2);
+};
+
 export default function FirstStep() {
   const [amount, setAmount] = useState("");
+
   return (
     <View
       style={{
@@ -34,10 +43,7 @@ export default function FirstStep() {
         }}
       />
       {amount && (
-        <Text>
-          You will receive USD {parseFloat(amount || "0").toFixed(2)} tokens in
-          your wallet.
-        </Text>
+        <Text>You will receive USD {formatAmount(amount)} tokens in your wallet.</Text>
       )}
     </View>
   );
