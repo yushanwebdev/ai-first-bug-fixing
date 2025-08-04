@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ai-first-bug-fixing",
-    "slug": "ai-first-bug-fixing",
+    "slug": "ai-session",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -39,6 +39,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "aefa61d7-306b-47a3-b295-429d743c80bc"
+      }
+    },
+    "owner": "blott"
   }
 }
