@@ -34,7 +34,10 @@ export default function FirstStep() {
         }}
       />
       {amount && (
-        <Text>You will receive USD {amount} tokens in your wallet.</Text>
+        <Text>
+          You will receive USD {Number.parseFloat(amount).toFixed(2)} tokens in
+          your wallet.
+        </Text>
       )}
     </View>
   );
