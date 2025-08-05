@@ -35,8 +35,11 @@ export default function FirstStep() {
       />
       {amount && (
         <Text>
-          You will receive USD {Number.parseFloat(amount).toFixed(2)} tokens in
-          your wallet.
+          You will receive USD {
+            isNaN(Number.parseFloat(amount)) 
+              ? "0.00" 
+              : Number.parseFloat(amount).toFixed(2)
+          } tokens in your wallet.
         </Text>
       )}
     </View>
